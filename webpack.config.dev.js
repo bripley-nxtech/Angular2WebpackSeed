@@ -5,7 +5,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  context: __dirname,
+    context: __dirname,
     devtool: 'eval-source-map',
     entry:{
       'app': './src/main.ts'
