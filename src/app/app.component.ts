@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
     title = 'Angular 2 Proof Of Concept';
+    checked = false;
+
+    checkTitle() {
+        if(this.title == 'stuff')
+            this.checked = true;
+    }
 }

@@ -36,9 +36,14 @@ module.exports = function(config){
         _config.reporters.push("coverage");
 
         _config.coverageReporter = {
-            type : 'html',
-            dir : 'coverage/'
-        }
+            dir: 'coverage/',
+            reporters: [{
+                type: 'json',
+                dir: 'coverage',
+                subdir: 'json',
+                file: 'coverage-final.json'
+            }]
+        };
     }
 
     config.set(_config);

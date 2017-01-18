@@ -6,11 +6,12 @@
   "scripts": {
     "build:dev": "npm run clean:dist && npm run webpack:dev",
     "clean:dist": "npm run rimraf -- dist",
+    "coverage-html": "remap-istanbul -i coverage/json/coverage-final.json -o coverage/html -t html",
     "rimraf": "rimraf",
     "postinstall": "npm i rimraf -g",
     "start": "npm run build:dev",
     "test": "set coverage=false&& karma start",
-    "test-coverage": "set coverage=true&& karma start --single-run true",
+    "test-coverage": "set coverage=true&& karma start --single-run true && npm run coverage-html",
     "webpack:dev": "webpack-dev-server --config webpack.config.dev.js --progress",
     "webpack": "webpack"
   },
