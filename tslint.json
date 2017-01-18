@@ -1,0 +1,16 @@
+{
+  "rulesDirectory":[
+    "node_modules/codelyzer"
+  ],
+  "rules": {
+    "class-name": true,
+    "max-line-length":[
+      true,
+      120
+    ],
+    "quotemark":[
+      true,
+      "single"
+    ]
+  }
+}
