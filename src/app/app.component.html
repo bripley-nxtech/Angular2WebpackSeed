@@ -2,6 +2,7 @@
 <h2>{{title}}</h2>
 
 <label>Change Title To: </label>
-<input type="text" id="titleText" (input)="newTitle = $event.target.value"/>
+<input type="text" id="titleText"
+       (input)="newTitle = $event.target.value"/>
 
 <button (click)="updateTitle()">Change Title</button>
