@@ -3,12 +3,15 @@ const path = require('path');
 const autoPrefixer = require('autoprefixer');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
+const commonChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
 module.exports = {
     context: __dirname,
     devtool: 'eval-source-map',
     entry:{
-      'app': './src/main.ts'
+        'polyfills': './src/polyfills.ts',
+        'vendor': './src/vendor.ts',
+        'app': './src/main.ts'
     },
     output: {
       path: root('/dist'),
@@ -122,13 +125,17 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new htmlWebpackPlugin({
-            template: './src/index.html',
+            template: './src/public/index.html',
             chunksSortMode: 'dependency'
-        })
+        }),
+        new commonChunkPlugin({
+            name: ['vendor','polyfills']
+        }),
+        new extractTextPlugin({filename: 'css/[name].[hash].css'}),
     ],
     devServer: {
         hot: true,
-        contentBase: root('/dist'),
+        contentBase: root('/src/public'),
         port: 9000,
         inline: true,
         stats: 'verbose',

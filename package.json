@@ -4,6 +4,7 @@
   "description": "Just trying to proof of concept out some angular 2 structure along with something for automation and continuous deployment",
   "main": "index.js",
   "scripts": {
+    "build:prod": "npm run clean:dist&& npm run webpack:prod",
     "build:dev": "npm run clean:dist && npm run webpack:dev",
     "clean:dist": "npm run rimraf -- dist",
     "coverage-html": "remap-istanbul -i coverage/json/coverage-final.json -o coverage/html -t html",
@@ -13,6 +14,7 @@
     "test": "set coverage=false&& karma start",
     "test-coverage": "set coverage=true&& karma start --single-run true && npm run coverage-html",
     "webpack:dev": "webpack-dev-server --config webpack.config.dev.js --progress",
+    "webpack:prod": "webpack --config webpack.config.prod.js --progress --profile --bail",
     "webpack": "webpack"
   },
   "repository": {
