@@ -42,6 +42,8 @@ module.exports = function(config){
                 dir: 'coverage',
                 subdir: 'json',
                 file: 'coverage-final.json'
+            },{
+                type: 'text-summary'
             }]
         };
     }
