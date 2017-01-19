@@ -34,8 +34,7 @@ module.exports = function makeWebpackConfig(){
                 loader: 'raw-loader!postcss-loader'
             },
             {
-                test: /\.(scss|sass)$/,
-                include: [__dirname + '/src/app'],
+                test: /\.scss$/,
                 loader: 'raw-loader!postcss-loader!sass-loader'
             },
             {

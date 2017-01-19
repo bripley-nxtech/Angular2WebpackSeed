@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRoutes } from '@angular/router';
+import { MaterialModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
@@ -8,7 +9,7 @@ describe('App: ', () => {
    describe('Component: ', () => {
        beforeEach(() => {
            TestBed.configureTestingModule({
-               imports: [RouterTestingModule],
+               imports: [RouterTestingModule,MaterialModule.forRoot()],
                declarations: [AppComponent],
                providers : []
            });
