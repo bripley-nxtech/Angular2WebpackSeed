@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app',
@@ -8,10 +8,8 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
     title = 'Angular 2 Proof Of Concept';
-    checked = false;
-
-    checkTitle() {
-        if(this.title == 'stuff')
-            this.checked = true;
+    @Input() newTitle: string;
+    updateTitle() {
+        this.title = this.newTitle;
     }
 }

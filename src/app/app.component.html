@@ -1,2 +1,7 @@
 <h1 class="cool-class">Cool Stuff Being Done Here!!</h1>
 <h2>{{title}}</h2>
+
+<label>Change Title To: </label>
+<input type="text" id="titleText" (input)="newTitle = $event.target.value"/>
+
+<button (click)="updateTitle()">Change Title</button>
