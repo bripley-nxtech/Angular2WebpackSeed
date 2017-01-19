@@ -1,17 +1,17 @@
-/**
- * Created by b.ripley on 1/18/2017.
- */
+import 'hammerjs';
+import '../public/index.scss';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
 @NgModule({
-    imports: [BrowserModule,HttpModule,FormsModule],
+    imports: [BrowserModule,HttpModule,FormsModule,MaterialModule.forRoot()],
     declarations: [AppComponent],
     providers: [],
     bootstrap: [AppComponent]

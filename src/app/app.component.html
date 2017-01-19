@@ -5,4 +5,40 @@
 <input type="text" id="titleText"
        (input)="newTitle = $event.target.value"/>
 
-<button (click)="updateTitle()">Change Title</button>
+<button md-button (click)="updateTitle()">
+    <span class="md-button-wrapper">Update Text</span>
+</button>
+
+
+<div class="app-content">
+    <h1>{{title}}</h1>
+
+    <!-- Buttons -->
+    <md-card>
+        <button md-button>FLAT</button>
+        <button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>
+        <button md-raised-button color="primary">PRIMARY RAISED</button>
+        <button md-raised-button color="accent">ACCENT RAISED</button>
+    </md-card>
+
+    <!-- Checkboxes -->
+    <md-card>
+        <md-checkbox>Unchecked</md-checkbox>
+        <md-checkbox [checked]="true">Checked</md-checkbox>
+        <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
+        <md-checkbox [disabled]="true">Disabled</md-checkbox>
+    </md-card>
+
+    <!-- Radio Buttons -->
+    <md-card>
+        <md-radio-button name="symbol">Alpha</md-radio-button>
+        <md-radio-button name="symbol">Beta</md-radio-button>
+        <md-radio-button name="symbol" disabled>Gamma</md-radio-button>
+    </md-card>
+
+    <!-- Slider -->
+    <md-card>
+        <md-slider min="1" max="5"></md-slider>
+    </md-card>
+
+</div>

@@ -77,7 +77,7 @@ module.exports = {
               exclude: root('/src/app'),
               loader: extractTextPlugin.extract({
                   fallbackLoader: 'style-loader',
-                  loader: ['css-loader','postcss-loader','sass-loader']
+                  loader: ['raw-loader','postcss-loader','sass-loader']
               })
           },
           {

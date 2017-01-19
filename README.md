@@ -1,5 +1,4 @@
-# Angular2WebpackSeed
-Seed Project for Angular 2 and Webpack
+# Angular 2 - Webpack Seed
 
 ## Commands:
 1. **npm start** - This is for local development. It will bundle the app and turn on the webpack-dev-server and also enable hot module replacement
