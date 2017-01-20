@@ -11,7 +11,7 @@
     "docs": "node_modules/.bin/compodoc -p tsconfig.json -d docs&& npm run serve-docs",
     "serve-docs": "node_modules/.bin/compodoc -s -d docs",
     "rimraf": "rimraf",
-    "postinstall": "npm i rimraf -g",
+    "postinstall": "npm i rimraf -g&& npm run build:prod",
     "start": "npm run build:dev",
     "test": "set coverage=false&& karma start",
     "test-coverage": "set coverage=true&& karma start --single-run true && npm run coverage-html",
