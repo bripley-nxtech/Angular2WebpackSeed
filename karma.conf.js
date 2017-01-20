@@ -23,7 +23,8 @@ module.exports = function(config){
         webpackServer: {
             noInfo: true //Don't spam the console when running in karma
         },
-        reporters: ['mocha'],
+        reporters: ['mocha','trx'],
+        trxReporter: { outputFile: 'test-results.trx', shortTestName: false },
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
