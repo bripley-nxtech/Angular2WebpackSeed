@@ -3,6 +3,7 @@ const path = require('path');
 const webpackConfig = require('./webpack.config.test');
 //In order for coverage we need to pass an environment variable
 var ENV = process.env.coverage;
+var browser = 'true' === process.env.browser;
 const coverage = ENV === 'true';
 
 module.exports = function(config){
@@ -29,9 +30,14 @@ module.exports = function(config){
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: !coverage,
-        browsers: ['Chrome'],
         singleRun: coverage
     };
+
+    if(browser)
+        _config.browsers = ['Chrome'];
+    else{
+        _config.browsers = ['Edge'];
+    }
 
     if(coverage){
         _config.reporters.push("coverage");
