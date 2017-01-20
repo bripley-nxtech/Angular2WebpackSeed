@@ -36,7 +36,7 @@ module.exports = function(config){
     if(browser)
         _config.browsers = ['Chrome'];
     else{
-        _config.browsers = ['Edge'];
+        _config.browsers = ['PhantomJS'];
     }
 
     if(coverage){
