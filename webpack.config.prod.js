@@ -5,6 +5,7 @@ const commonChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
+const definePlugin = require('webpack/lib/DefinePlugin');
 
 module.exports = {
     context: __dirname,
@@ -12,7 +13,7 @@ module.exports = {
     entry:{
         'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor.ts',
-        'app': './src/main.prod.ts'
+        'app': './src/main.ts'
     },
     output: {
         path: root('/dist'),
@@ -109,6 +110,11 @@ module.exports = {
             /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
             root('./src') // location of your src
         ),
+        new definePlugin({
+            'process.env':{
+                ENV: JSON.stringify(process.env.ENV)
+            }
+        }),
         new webpack.LoaderOptionsPlugin({
             options:{
                 /*
