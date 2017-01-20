@@ -16,7 +16,7 @@
     "test": "set coverage=false&& karma start",
     "test-coverage": "set coverage=true&& karma start --single-run true && npm run coverage-html",
     "webpack:dev": "webpack-dev-server --config webpack.config.dev.js --progress",
-    "webpack:prod": "webpack --config webpack.config.prod.js --progress --profile --bail",
+    "webpack:prod": "set ENV=Prod&& webpack --config webpack.config.prod.js --progress --profile --bail",
     "webpack": "webpack"
   },
   "repository": {
