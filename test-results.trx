@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="994477f4-6d02-83dc-ee85-ff6c8a0638d9" name="b.ripley@5CG6414Q35 2017-01-23T15:45:24" runUser="b.ripley" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Karma Test Run" id="e9374f45-2dcf-5ec1-8988-6281bf44e251"/>
+  <Times creation="2017-01-23T15:45:24" queuing="2017-01-23T15:45:24" start="2017-01-23T15:45:24" finish="2017-01-23T15:45:53"/>
+  <ResultSummary outcome="Passed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0"/>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="PhantomJS 2.1.1 (Windows 8 0.0.0)_should have a title" id="d9809670-7ff6-6917-9516-305d5efa38ba">
+      <Execution id="560d9731-74ba-2d84-c6d5-ba0b296dce05"/>
+      <TestMethod codeBase="App: .Component: .PhantomJS 2.1.1 (Windows 8 0.0.0)_should have a title" name="PhantomJS 2.1.1 (Windows 8 0.0.0)_should have a title" className="App: .Component: "/>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda"/>
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="d9809670-7ff6-6917-9516-305d5efa38ba" executionId="560d9731-74ba-2d84-c6d5-ba0b296dce05" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="560d9731-74ba-2d84-c6d5-ba0b296dce05" testId="d9809670-7ff6-6917-9516-305d5efa38ba" testName="PhantomJS 2.1.1 (Windows 8 0.0.0)_should have a title" computerName="5CG6414Q35" duration="00:00:07.312" startTime="2017-01-23T15:45:53" endTime="2017-01-23T15:45:53" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+  </Results>
+</TestRun>
