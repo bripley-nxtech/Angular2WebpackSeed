@@ -16,9 +16,27 @@ describe('App: ', function() {
        });
 
        it('should have a title', function() {
+           //Arrange
            var component = TestBed.createComponent(AppComponent);
+
+           //Act
            component.detectChanges();
+
+           //Assert
            expect(component.debugElement.componentInstance.title).toBeDefined();
-       })
+       });
+
+       it('should change the title to newTitle',function(){
+           //Arrange
+           var component = TestBed.createComponent(AppComponent);
+           component.debugElement.componentInstance.newTitle = 'Hello';
+
+           //Act
+           component.debugElement.componentInstance.updateTitle();
+           component.detectChanges();
+
+           //Assert
+           expect(component.debugElement.componentInstance.title).toBe('Hello');
+       });
    })
 });

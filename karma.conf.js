@@ -37,6 +37,8 @@ module.exports = function(config){
     else{
         {
             _config.browsers = ['PhantomJS'];
+            _config.captureTimeout = 60000;
+            _config.browserNoActivityTimeout = 30000;
             // _config.browsers = ['Chrome_travis_ci'];
             // _config.customLaunchers = {
             //     // chrome setup for travis CI using chromium
@@ -55,7 +57,7 @@ module.exports = function(config){
                 global: {
                     statements: 90,
                         lines: 90,
-                        functions: 60,
+                        functions: 90,
                         branches: 90
                 }
             },
