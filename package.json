@@ -4,7 +4,7 @@
   "description": "Just trying to proof of concept out some angular 2 structure along with something for automation and continuous deployment",
   "main": "index.js",
   "scripts": {
-    "build:prod": "npm run clean:dist&& npm run webpack:prod",
+    "build": "npm run clean:dist&& npm run webpack:prod",
     "build:dev": "npm run webpack:dev",
     "clean:dist": "npm run rimraf -- dist",
     "coverage-html": "remap-istanbul -i coverage/json/coverage-final.json -o coverage/html -t html",
