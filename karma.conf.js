@@ -29,22 +29,38 @@ module.exports = function(config){
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
-        autoWatch: !coverage,
-        singleRun: coverage
+        autoWatch: true,
+        singleRun: false
     };
 
     if(browser)
         _config.browsers = ['Chrome'];
     else{
-        _config.browsers = ['PhantomJS'];
+        {
+            _config.browsers = ['Chrome_travis_ci'];
+            _config.customLaunchers = {
+                // chrome setup for travis CI using chromium
+                Chrome_travis_ci: {
+                    base: 'Chrome',
+                    flags: [' — no-sandbox']
+                }
+            }
+        }
     }
 
     if(coverage){
-        _config.reporters.push("coverage");
-
+        _config.reporters.push('coverage');
         _config.coverageReporter = {
+            check: {
+                global: {
+                    statements: 90,
+                        lines: 90,
+                        functions: 60,
+                        branches: 90
+                }
+            },
             dir: 'coverage/',
-            reporters: [{
+                reporters: [{
                 type: 'json',
                 dir: 'coverage',
                 subdir: 'json',
@@ -52,7 +68,7 @@ module.exports = function(config){
             },{
                 type: 'text-summary'
             }]
-        };
+        }
     }
 
     config.set(_config);

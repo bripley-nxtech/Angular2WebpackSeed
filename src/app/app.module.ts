@@ -1,4 +1,3 @@
-import 'hammerjs';
 import '../public/index.scss';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';

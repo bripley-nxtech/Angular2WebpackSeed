@@ -11,7 +11,8 @@ module.exports = function makeWebpackConfig(){
     config.devtool = 'inline-source-map';
     config.entry = function(){return {}};
     config.resolve = {
-        extensions: ['.js','.ts','.json','.scss','.css','.html']
+        extensions: ['.js','.ts','.json','.scss','.css','.html'],
+        modules: [path.resolve(__dirname,'src'),'node_modules']
     };
     config.module = {
         rules: [
@@ -44,8 +45,7 @@ module.exports = function makeWebpackConfig(){
         ]
     };
 
-    if(coverage)
-    {
+    if(coverage){
         console.log('Adding Coverage Modules');
         config.module.rules.push({
             test: /\.ts$/,
@@ -58,6 +58,7 @@ module.exports = function makeWebpackConfig(){
         config.module.rules.push({
             test: /\.ts$/,
             enforce: 'pre',
+            exclude: './node_modules',
             loader: 'tslint-loader'
         });
     }
@@ -68,7 +69,8 @@ module.exports = function makeWebpackConfig(){
         new webpack.ContextReplacementPlugin(
             // The (\\|\/) piece accounts for path separators in *nix and Windows
             /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-            root('./src') // location of your src
+            root('./src'), // location of your src
+            { }
         ),
         new webpack.LoaderOptionsPlugin({
             options:{
@@ -76,7 +78,7 @@ module.exports = function makeWebpackConfig(){
                  Apply the tslint loader as pre/postLoader
                  */
                 tslint: {
-                    emitErrors: false,
+                    emitErrors: true,
                     failOnHint: false
                 },
                 postcss: [
@@ -87,6 +89,15 @@ module.exports = function makeWebpackConfig(){
             }
         })
     ];
+
+    config.node = {
+        global: true,
+        process: false,
+        crypto: 'empty',
+        module: false,
+        clearImmediate: false,
+        setImmediate: false
+    };
 
     return config;
 }();
