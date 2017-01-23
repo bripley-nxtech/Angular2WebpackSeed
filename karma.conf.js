@@ -36,14 +36,15 @@ module.exports = function(config){
         _config.browsers = ['Chrome'];
     else{
         {
-            _config.browsers = ['Chrome_travis_ci'];
-            _config.customLaunchers = {
-                // chrome setup for travis CI using chromium
-                Chrome_travis_ci: {
-                    base: 'Chrome',
-                    flags: [' — no-sandbox']
-                }
-            }
+            _config.browsers = ['PhantomJS'];
+            // _config.browsers = ['Chrome_travis_ci'];
+            // _config.customLaunchers = {
+            //     // chrome setup for travis CI using chromium
+            //     Chrome_travis_ci: {
+            //         base: 'Chrome',
+            //         flags: [' — no-sandbox']
+            //     }
+            // }
         }
     }
 
@@ -54,7 +55,7 @@ module.exports = function(config){
                 global: {
                     statements: 90,
                         lines: 90,
-                        functions: 60,
+                        functions: 90,
                         branches: 90
                 }
             },

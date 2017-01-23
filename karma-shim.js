@@ -1,10 +1,7 @@
 Error.stackTraceLimit = Infinity;
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 2000;
 
-//require('core-js/client/shim');
-require('core-js/es6');
-require('core-js/es7/reflect');
-require('reflect-metadata');
+require('core-js/client/shim');
 
 require('ts-helpers');
 

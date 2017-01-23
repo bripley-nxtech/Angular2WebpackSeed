@@ -5,9 +5,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
 
-describe('App: ', () => {
-   describe('Component: ', () => {
-       beforeEach(() => {
+describe('App: ', function() {
+   describe('Component: ', function () {
+       beforeEach( function() {
            TestBed.configureTestingModule({
                imports: [RouterTestingModule,MaterialModule.forRoot()],
                declarations: [AppComponent],
@@ -15,8 +15,8 @@ describe('App: ', () => {
            });
        });
 
-       it('should have a title', () => {
-           let component = TestBed.createComponent(AppComponent);
+       it('should have a title', function() {
+           var component = TestBed.createComponent(AppComponent);
            component.detectChanges();
            expect(component.debugElement.componentInstance.title).toBeDefined();
        })
