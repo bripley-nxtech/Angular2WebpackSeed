@@ -2,9 +2,8 @@ const path = require('path');
 
 const webpackConfig = require('./webpack.config.test');
 //In order for coverage we need to pass an environment variable
-var ENV = process.env.coverage;
 var browser = 'true' === process.env.browser;
-const coverage = ENV === 'true';
+const coverage = 'true' === process.env.coverage;
 
 module.exports = function(config){
     var _config = {
