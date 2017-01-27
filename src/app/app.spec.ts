@@ -26,17 +26,17 @@ describe('App: ', function() {
            expect(component.debugElement.componentInstance.title).toBeDefined();
        });
 
-       it('should change the title to newTitle',function(){
-           //Arrange
-           var component = TestBed.createComponent(AppComponent);
-           component.debugElement.componentInstance.newTitle = 'Hello';
+    //    it('should change the title to newTitle',function(){
+    //        //Arrange
+    //        var component = TestBed.createComponent(AppComponent);
+    //        component.debugElement.componentInstance.newTitle = 'Hello';
 
-           //Act
-           component.debugElement.componentInstance.updateTitle();
-           component.detectChanges();
+    //        //Act
+    //        component.debugElement.componentInstance.updateTitle();
+    //        component.detectChanges();
 
-           //Assert
-           expect(component.debugElement.componentInstance.title).toBe('Hello');
-       });
+    //        //Assert
+    //        expect(component.debugElement.componentInstance.title).toBe('Hello');
+    //    });
    })
 });

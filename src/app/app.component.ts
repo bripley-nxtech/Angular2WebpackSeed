@@ -9,9 +9,17 @@ import { Component, Input } from '@angular/core';
 
 export class AppComponent {
     title = 'Angular 2 Proof Of Concept';
-    @Input() newTitle: string;
+    newTitle: string;
 
     updateTitle() {
         this.title = this.newTitle;
+    }
+
+    setNewTitle(event){
+        this.newTitle = event.target.value  
+    }
+
+    updateSliderValue(){
+        console.log('Stuff');
     }
 }

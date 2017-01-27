@@ -16,7 +16,7 @@
     "start": "npm run build:dev",
     "test": "set coverage=true&& set browser=false&& karma start --single-run true --auto-watch false",
     "test:dev": "set browser=true&& karma start",
-    "test:coverage": "set browser=true&& karma start --single-run true --auto-watch false && npm run coverage-html",
+    "test:coverage": "set browser=true&& set coverage=true&& karma start --single-run true --auto-watch false && npm run coverage-html",
     "webpack:dev": "webpack-dev-server --config webpack.config.dev.js --progress",
     "webpack:prod": "set ENV=Prod&& webpack --config webpack.config.prod.js --progress --profile --bail",
     "webpack": "webpack"

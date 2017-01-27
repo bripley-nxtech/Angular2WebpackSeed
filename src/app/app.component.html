@@ -1,11 +1,10 @@
 <h1 class="cool-class">This is Angular 2 PoC!</h1>
 <h2>{{title}}</h2>
-
 <label>Change Title To: </label>
 <input type="text" id="titleText"
-       (input)="newTitle = $event.target.value"/>
+       (input)="setNewTitle($event)"/>
 
-<button md-button (click)="updateTitle()">
+<button md-raised-button color="primary" (click)="updateTitle()">
     <span class="md-button-wrapper">Update Title</span>
 </button>
 
