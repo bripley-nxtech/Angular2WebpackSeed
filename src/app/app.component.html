@@ -1,5 +1,6 @@
 <h1 class="cool-class">This is Angular 2 PoC!</h1>
 <h2>{{title}}</h2>
+<h3>{{sliderValue || 1}}</h3>
 <label>Change Title To: </label>
 <input type="text" id="titleText"
        (input)="setNewTitle($event)"/>
@@ -35,7 +36,7 @@
 
     <!-- Slider -->
     <md-card>
-        <md-slider min="1" max="5"></md-slider>
+        <md-slider min="1" max="5" [(ngModel)]="sliderValue"></md-slider>
     </md-card>
 
 </div>
