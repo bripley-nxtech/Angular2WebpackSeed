@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class AppComponent {
-    title = 'Angular 2 Proof Of Concept';
+    title = 'This is the power of CI/CD';
     newTitle: string;
     @Input() sliderValue: number;
 
