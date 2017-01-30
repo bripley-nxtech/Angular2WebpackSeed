@@ -6,6 +6,8 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const definePlugin = require('webpack/lib/DefinePlugin');
+var chunkManifestPlugin = require('chunk-manifest-webpack-plugin');
+var webpackChunkHash = require('webpack-chunk-hash');
 
 module.exports = {
     context: __dirname,
@@ -17,8 +19,8 @@ module.exports = {
     },
     output: {
         path: root('/dist'),
-        filename: '[name].bundle.[hash].js',
-        chunkFilename: '[id].chunk.[hash].js'
+        filename: '[name].bundle.[chunkhash].js',
+        chunkFilename: '[name].[chunkhash].js'
     },
     resolve: {
         extensions: ['.js','.ts','.json','.scss','.css','.html']
@@ -131,13 +133,19 @@ module.exports = {
                 ]
             }
         }),
-        new webpack.HotModuleReplacementPlugin(),
+        new commonChunkPlugin({
+            name: ['vendor','polyfills','manifest'],
+            minChunks: Infinity
+        }),
+        new webpack.HashedModuleIdsPlugin(),
+        new webpackChunkHash(),
+        new chunkManifestPlugin({
+            filename: 'chunk-manifest.json',
+            manifestVariable: 'webpackManifest'
+        }),
         new htmlWebpackPlugin({
             template: './src/public/index.html',
             chunksSortMode: 'dependency'
-        }),
-        new commonChunkPlugin({
-            name: ['vendor','polyfills']
         }),
         new extractTextPlugin({filename: 'css/[name].[hash].css'}),
         new webpack.NoEmitOnErrorsPlugin(),
