@@ -55,10 +55,10 @@ module.exports = function(config){
         _config.coverageReporter = {
             check: {
                 global: {
-                    statements: 20,
-                        lines: 20,
-                        functions: 20,
-                        branches: 20
+                    statements: 90,
+                        lines: 90,
+                        functions: 90,
+                        branches: 90
                 }
             },
             dir: 'coverage/',

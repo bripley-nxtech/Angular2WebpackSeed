@@ -3,7 +3,7 @@
 <h3>Slider Value: {{sliderValue || 1}}</h3>
 <label>Change Title To: </label>
 <input type="text" id="titleText"
-       (input)="setNewTitle($event)"/>
+       (input)="setNewTitle($event.target.value)"/>
 
 <button md-raised-button color="primary" (click)="updateTitle()">
     <span class="md-button-wrapper">Update Title</span>
@@ -36,7 +36,7 @@
 
     <!-- Slider -->
     <md-card>
-        <md-slider min="1" max="5" [(ngModel)]="sliderValue"></md-slider>
+        <md-slider min="1" max="5" (change)="updateSliderValue($event.value)"></md-slider>
     </md-card>
 
 </div>
