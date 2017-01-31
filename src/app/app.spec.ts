@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { provideRoutes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -11,6 +12,7 @@ describe('App: ', function() {
            TestBed.configureTestingModule({
                imports: [RouterTestingModule,MaterialModule.forRoot()],
                declarations: [AppComponent],
+               schemas: [CUSTOM_ELEMENTS_SCHEMA],
                providers : []
            });
        });
