@@ -1,9 +1,10 @@
 import '../public/index.scss';
-import { NgModule, ApplicationRef } from '@angular/core';
+import { NgModule, ApplicationRef, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
+import '../shared/app-logo';
 
 import { AppComponent } from './app.component';
 
@@ -12,6 +13,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 @NgModule({
     imports: [BrowserModule,HttpModule,FormsModule,MaterialModule.forRoot()],
     declarations: [AppComponent],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     providers: [],
     bootstrap: [AppComponent]
 })

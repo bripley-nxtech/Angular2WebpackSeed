@@ -45,8 +45,6 @@
     "assets-webpack-plugin": "3.5.0",
     "autoprefixer": "6.6.1",
     "awesome-typescript-loader": "3.0.0-beta.18",
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
     "chunk-manifest-webpack-plugin": "^1.0.0",
     "codelyzer": "2.0.0-beta.4",
     "compodoc": "0.0.34",
