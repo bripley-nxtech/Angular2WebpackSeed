@@ -23,6 +23,7 @@ class AppLogo extends HTMLElement {
     return `
       <div>
         <h1>Our Logo Text</h1> 
+        <button>Press Me</button>
       </div>
     `;
   }
