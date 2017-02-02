@@ -27,7 +27,14 @@ module.exports = {
     },
     module: {
         rules:[
-
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015']
+                }
+            },
             /*
              awesome-typescript-loader: This is what loads typescript for webpack
              angular2-template-loader: This loader allows you to decouple templates from the component file and maintain
